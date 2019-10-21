@@ -96,7 +96,7 @@ The Addin can be found in the following place "C:\ProgramData\COPA-DATA\zenon810
 
     | Name | Driver | Type | Property: Service Grid access permission |
     | - | - | - | - |
-    | Alexa_motorpseed | Intern Driver | INT | Read-write |
+    | Alexa_motorspeed | Intern Driver | INT | Read-write |
     | Alexa_abc | Intern Driver | BOOL | Read-write |
     | Alexa_message | Intern Driver | STRING | Read-write |
 
