@@ -1,0 +1,621 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "motor control",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "Cancel the action"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "What can I do"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "Stop"
+                    ]
+                },
+                {
+                    "name": "SetValueIntent",
+                    "slots": [
+                        {
+                            "name": "variableName",
+                            "type": "CUSTOM_variableName",
+                            "samples": [
+                                "{variableName}",
+                                "variable {variableName}"
+                            ]
+                        },
+                        {
+                            "name": "variableValue",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "to value {variableValue}",
+                                "{variableValue}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "modify variable {variableName}",
+                        "modify variable {variableName} to {variableValue}",
+                        "change variable {variableName} to {variableValue}",
+                        "set {variableName} to {variableValue}",
+                        "change variable {variableName}",
+                        "set {variableName}",
+                        "modify {variableName}",
+                        "change {variableName}",
+                        "change variable {variableName} to value {variableValue}",
+                        "modify {variableName} to {variableValue}",
+                        "change {variableName} to {variableValue}",
+                        "set variable {variableName} to value {variableValue}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GetValueIntent",
+                    "slots": [
+                        {
+                            "name": "variableName",
+                            "type": "CUSTOM_variableName",
+                            "samples": [
+                                "variable {variableName}",
+                                "{variableName}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Tell me the value of variable {variableName}",
+                        "What's the value of  variable {variableName}",
+                        "What's the value of  {variableName}",
+                        "Tell me the value of {variableName}"
+                    ]
+                },
+                {
+                    "name": "IncreaseValueIntent",
+                    "slots": [
+                        {
+                            "name": "variableName",
+                            "type": "CUSTOM_variableName",
+                            "samples": [
+                                "{variableName}",
+                                "variable {variableName}"
+                            ]
+                        },
+                        {
+                            "name": "offset",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "increase it by {offset}",
+                                "by {offset}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "increase the value of variable {variableName} by {offset}",
+                        "increase the value of variable {variableName}",
+                        "increase variable {variableName} by {offset}",
+                        "increase variable {variableName}",
+                        "increase {variableName}",
+                        "increase {variableName} by {offset}",
+                        "increase the value of {variableName} by {offset}",
+                        "increase the value of {variableName}"
+                    ]
+                },
+                {
+                    "name": "DecreaseValueIntent",
+                    "slots": [
+                        {
+                            "name": "variableName",
+                            "type": "CUSTOM_variableName",
+                            "samples": [
+                                "{variableName}",
+                                "variable {variableName}"
+                            ]
+                        },
+                        {
+                            "name": "offset",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "decrease it by {offset}",
+                                "by {offset}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "decrease variable {variableName} by {offset}",
+                        "decrease variable {variableName} ",
+                        "decrease the value of variable {variableName} by {offset}",
+                        "decrease the value of variable {variableName}",
+                        "decrease {variableName}",
+                        "decrease {variableName} by {offset}",
+                        "decrease the value of {variableName} by {offset}",
+                        "decrease the value of {variableName}"
+                    ]
+                },
+                {
+                    "name": "ResetValueIntent",
+                    "slots": [
+                        {
+                            "name": "variableName",
+                            "type": "CUSTOM_variableName",
+                            "samples": [
+                                "{variableName}",
+                                "variable {variableName}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "reset {variableName}",
+                        "reset the value of {variableName}",
+                        "reset variable {variableName}"
+                    ]
+                },
+                {
+                    "name": "AllActionsIntent",
+                    "slots": [],
+                    "samples": [
+                        "Tell ma all actions.",
+                        "List all actions.",
+                        "List all available actions.",
+                        "Please tell me all available actions."
+                    ]
+                },
+                {
+                    "name": "StartMotorIntent",
+                    "slots": [
+                        {
+                            "name": "speed",
+                            "type": "CUSTOM_motorspeed",
+                            "samples": [
+                                "{speed}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Turn on motor",
+                        "Start motor {speed}",
+                        "Turn on the motor {speed}"
+                    ]
+                },
+                {
+                    "name": "StopMotorIntent",
+                    "slots": [],
+                    "samples": [
+                        "Turn off the motor",
+                        "Stop motor"
+                    ]
+                },
+                {
+                    "name": "SendMessageIntent",
+                    "slots": [
+                        {
+                            "name": "message",
+                            "type": "CUSTOM_message",
+                            "samples": [
+                                "{message}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "Write text {message}",
+                        "Send message {message}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "CUSTOM_variableName",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "abc",
+                                "synonyms": [
+                                    "ABC"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "motorspeed",
+                                "synonyms": [
+                                    "motor speed"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "CUSTOM_motorspeed",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "slowly",
+                                "synonyms": [
+                                    "slow"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "moderately",
+                                "synonyms": [
+                                    "moderate",
+                                    "medium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "fast",
+                                "synonyms": [
+                                    "high"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "CUSTOM_message",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "sample message"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hello world"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "SetValueIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "variableName",
+                            "type": "CUSTOM_variableName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1364584323174.62311265186"
+                            }
+                        },
+                        {
+                            "name": "variableValue",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.258285235463.1020294916972",
+                                "elicitation": "Elicit.Slot.1531577526430.297749463124"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "GetValueIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "variableName",
+                            "type": "CUSTOM_variableName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.384755204611.1274936304576"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "IncreaseValueIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "variableName",
+                            "type": "CUSTOM_variableName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1244450460466.193576060904"
+                            }
+                        },
+                        {
+                            "name": "offset",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1100966560924.474857443153",
+                                "elicitation": "Elicit.Slot.1244450460466.1008790004193"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "DecreaseValueIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "variableName",
+                            "type": "CUSTOM_variableName",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1214222398579.954230797028"
+                            }
+                        },
+                        {
+                            "name": "offset",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1214222398579.650537640019",
+                                "elicitation": "Elicit.Slot.1214222398579.650537640019"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ResetValueIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "variableName",
+                            "type": "CUSTOM_variableName",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.709360125868.1152765750074",
+                                "elicitation": "Elicit.Slot.709360125868.1152765750074"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "StartMotorIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "speed",
+                            "type": "CUSTOM_motorspeed",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.1555313073484.1331243433439",
+                                "elicitation": "Elicit.Slot.1091910801266.1292547832112"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "StopMotorIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.235701392273"
+                    },
+                    "slots": []
+                },
+                {
+                    "name": "SendMessageIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "message",
+                            "type": "CUSTOM_message",
+                            "confirmationRequired": true,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "confirmation": "Confirm.Slot.476358101453.995208548128",
+                                "elicitation": "Elicit.Slot.476358101453.995208548128"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1364584323174.62311265186",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the variable I should change."
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Which variable do you want to modify?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1531577526430.297749463124",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the value you want the variable to be set to."
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "To which value should I change the variable?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.384755204611.1274936304576",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "The value of which variable do you want to know?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Which variable do you want to know the value of?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1244450460466.193576060904",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which variable shall I increase?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1244450460466.1008790004193",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "By which value should I increase the value?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1214222398579.954230797028",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which variable shall I decrease?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1214222398579.650537640019",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "By which value should I decrease the value?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.709360125868.1152765750074",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the variable I should reset."
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Which value should I reset?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.258285235463.1020294916972",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Is it correct to set {variableName} to {variableValue} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1214222398579.650537640019",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Is it correct to decrease  {variableName} by {offset} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1100966560924.474857443153",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Is it correct to increase {variableName} by {offset} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.709360125868.1152765750074",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you want me to reset {variableName} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1091910801266.1292547832112",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please tell me the desired speed to start the motor. "
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.235701392273",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "I will stop the motor, is that correct?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Is it correct to stop the motor?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.476358101453.995208548128",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What message do you want to send?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.476358101453.995208548128",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Is it correct to send message {message} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Slot.1555313073484.1331243433439",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "I will turn on the motor {speed} , is that correct?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Is it correct to start the motor {speed} ?"
+                    }
+                ]
+            }
+        ]
+    }
+}
